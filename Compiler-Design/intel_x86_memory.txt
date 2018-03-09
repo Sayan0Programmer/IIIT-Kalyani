@@ -53,3 +53,11 @@ for rsi, rdi, rsp, rbp
 	dil	: 1B
 	spl	: 1B
 	bpl	: 1B
+	
+Segment registers: 8B
+	%fs	: file segment
+	%gs	: 
+	%cs	: code segment (used for IP)
+	%ss	: stack segment (used for SP)
+	%ds	: data segment (used for MOV)
+	%es	: destination segment (used for MOVS, CMPS)
