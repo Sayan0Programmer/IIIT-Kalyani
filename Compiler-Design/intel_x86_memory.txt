@@ -1,0 +1,55 @@
+...Intel x86_64 memory structure
+
+Types of registers (old to new)
+%ah %al	: 1B
+%ax		: 2B
+%eax		: 4B
+%rax		: 8B
+
+Instruction Size:
+	*b	: byte(8b=1B)
+	*w	: word(2B)
+	*l	: long(4B)
+	*q	: quad(8B)
+
+rflags	: 1B
+	CF - carry flag
+	PF - parity flag
+	AF - auxiliary flag
+	ZF - zero flag
+	SF - sign flag
+	DF - direction flag
+	OF - overflow flag
+
+rip - instruction pointer
+
+%rax		: accumulator
+%rbx		: base
+%rcx		: count
+%rdx		: data
+%rsi		: source index [input]
+%rdi		: destination index [output]
+%rbp		: base pointer
+%rsp		: stack pointer
+
+for rax, rbx, rcx, rdx:
+	r*x	: 8B
+	e*x	: 4B (low)
+	*x	: 2B (low)
+	*h	: 1B (high)
+	*l	: 1B (low)
+
+for each of %r8 -> %r15:
+	rN	: 8B
+	rNd	: 4B (low)
+	rNw	: 2B (low)
+	rNb	: 1B (low)
+
+for rip, rflags
+	only 8B
+
+for rsi, rdi, rsp, rbp
+	sil	: 1B
+	dil	: 1B
+	spl	: 1B
+	bpl	: 1B
