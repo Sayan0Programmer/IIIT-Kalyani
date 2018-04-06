@@ -1,0 +1,6 @@
+prog
+	int a, b;
+	scan a
+	b := a + 5;
+	print b
+end
