@@ -1,3 +1,9 @@
+/* files for compiling lex file to make Lexical Analyzer for a small language
+ * $ make[ENTER]
+ * $ ./lexeme < input.txt[ENTER]
+ * $ make clean[ENTER]
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "y.tab.h"
