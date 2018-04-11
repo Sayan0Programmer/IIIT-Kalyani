@@ -1,0 +1,760 @@
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ ps
+  PID TTY          TIME CMD
+21477 pts/2    00:00:00 bash
+21588 pts/2    00:00:00 ps
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ pstree
+systemd─┬─ModemManager─┬─{gdbus}
+        │              └─{gmain}
+        ├─NetworkManager─┬─dhclient
+        │                ├─dnsmasq
+        │                ├─{gdbus}
+        │                └─{gmain}
+        ├─accounts-daemon─┬─{gdbus}
+        │                 └─{gmain}
+        ├─acpid
+        ├─agetty
+        ├─avahi-daemon───avahi-daemon
+        ├─bluetoothd
+        ├─colord─┬─{gdbus}
+        │        └─{gmain}
+        ├─cron
+        ├─cups-browsed─┬─{gdbus}
+        │              └─{gmain}
+        ├─cupsd───4*[dbus]
+        ├─dbus-daemon
+        ├─fwupd─┬─{GUsbEventThread}
+        │       ├─{fwupd}
+        │       ├─{gdbus}
+        │       └─{gmain}
+        ├─gnome-keyring-d─┬─{gdbus}
+        │                 ├─{gmain}
+        │                 └─{timer}
+        ├─irqbalance
+        ├─lightdm─┬─Xorg───{InputThread}
+        │         ├─lightdm─┬─upstart─┬─at-spi-bus-laun─┬─dbus-daemon
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─at-spi2-registr─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─bamfdaemon─┬─{dconf worker}
+        │         │         │         │            ├─{gdbus}
+        │         │         │         │            ├─{gmain}
+        │         │         │         │            └─{pool}
+        │         │         │         ├─chromium-browse─┬─chromium-browse───chromium-browse─┬─3*[chromium-browse─┬─{Chrome_ChildIOT}]
+        │         │         │         │                 │                                   │                    ├─3*[{CompositorTileW}]]
+        │         │         │         │                 │                                   │                    ├─{Compositor}]
+        │         │         │         │                 │                                   │                    ├─{File}]
+        │         │         │         │                 │                                   │                    ├─{GpuMemoryThread}]
+        │         │         │         │                 │                                   │                    ├─4*[{TaskSchedulerRe}]]
+        │         │         │         │                 │                                   │                    └─{TaskSchedulerSe}]
+        │         │         │         │                 │                                   ├─chromium-browse─┬─{Chrome_ChildIOT}
+        │         │         │         │                 │                                   │                 ├─{File}
+        │         │         │         │                 │                                   │                 ├─4*[{TaskSchedulerCo}]
+        │         │         │         │                 │                                   │                 └─{TaskSchedulerSe}
+        │         │         │         │                 │                                   └─chromium-browse─┬─{Chrome_ChildIOT}
+        │         │         │         │                 │                                                     ├─4*[{TaskSchedulerCo}]
+        │         │         │         │                 │                                                     └─{TaskSchedulerSe}
+        │         │         │         │                 ├─chromium-browse─┬─chromium-browse
+        │         │         │         │                 │                 ├─{Chrome_ChildIOT}
+        │         │         │         │                 │                 ├─4*[{TaskSchedulerCo}]
+        │         │         │         │                 │                 ├─{TaskSchedulerSe}
+        │         │         │         │                 │                 └─{Watchdog}
+        │         │         │         │                 ├─{AudioThread}
+        │         │         │         │                 ├─{BatteryStatusNo}
+        │         │         │         │                 ├─{BrowserWatchdog}
+        │         │         │         │                 ├─{CacheThread_Blo}
+        │         │         │         │                 ├─{Chrome_HistoryT}
+        │         │         │         │                 ├─{Chrome_IOThread}
+        │         │         │         │                 ├─{Chrome_SyncThre}
+        │         │         │         │                 ├─{CompositorTileW}
+        │         │         │         │                 ├─{CrShutdownDetec}
+        │         │         │         │                 ├─{D-Bus thread}
+        │         │         │         │                 ├─{Geolocation}
+        │         │         │         │                 ├─{LevelDBEnv}
+        │         │         │         │                 ├─{NetworkChangeNo}
+        │         │         │         │                 ├─2*[{TaskSchedulerBa}]
+        │         │         │         │                 ├─3*[{TaskSchedulerFo}]
+        │         │         │         │                 ├─{TaskSchedulerSe}
+        │         │         │         │                 ├─7*[{TaskSchedulerSi}]
+        │         │         │         │                 ├─{chromium-browse}
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{extension_crash}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 ├─{gmain}
+        │         │         │         │                 ├─{gpu-process_cra}
+        │         │         │         │                 ├─{inotify_reader}
+        │         │         │         │                 ├─{ppapi_crash_upl}
+        │         │         │         │                 ├─{renderer_crash_}
+        │         │         │         │                 ├─{sandbox_ipc_thr}
+        │         │         │         │                 ├─{threaded-ml}
+        │         │         │         │                 └─{utility_crash_u}
+        │         │         │         ├─compiz─┬─{dconf worker}
+        │         │         │         │        ├─{gdbus}
+        │         │         │         │        ├─{gmain}
+        │         │         │         │        └─4*[{pool}]
+        │         │         │         ├─dbus-daemon
+        │         │         │         ├─dconf-service─┬─{gdbus}
+        │         │         │         │               └─{gmain}
+        │         │         │         ├─evince─┬─{EvJobScheduler}
+        │         │         │         │        ├─{dconf worker}
+        │         │         │         │        ├─{gdbus}
+        │         │         │         │        ├─{gmain}
+        │         │         │         │        └─{pool}
+        │         │         │         ├─evinced─┬─{gdbus}
+        │         │         │         │         └─{gmain}
+        │         │         │         ├─evolution-addre─┬─evolution-addre─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{evolution-addre}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{evolution-addre}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─evolution-calen─┬─evolution-calen─┬─{dconf worker}
+        │         │         │         │                 │                 ├─2*[{evolution-calen}]
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 ├─{gmain}
+        │         │         │         │                 │                 └─{pool}
+        │         │         │         │                 ├─evolution-calen─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{evolution-calen}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{evolution-calen}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─evolution-sourc─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gedit─┬─{dconf worker}
+        │         │         │         │       ├─{gdbus}
+        │         │         │         │       └─{gmain}
+        │         │         │         ├─gnome-session-b─┬─deja-dup-monito─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─gnome-software─┬─{dconf worker}
+        │         │         │         │                 │                ├─{gdbus}
+        │         │         │         │                 │                └─{gmain}
+        │         │         │         │                 ├─nautilus─┬─{dconf worker}
+        │         │         │         │                 │          ├─{gdbus}
+        │         │         │         │                 │          └─{gmain}
+        │         │         │         │                 ├─nm-applet─┬─{dconf worker}
+        │         │         │         │                 │           ├─{gdbus}
+        │         │         │         │                 │           └─{gmain}
+        │         │         │         │                 ├─polkit-gnome-au─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─unity-fallback-─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─update-notifier─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─zeitgeist-datah─┬─{gdbus}
+        │         │         │         │                 │                 ├─{gmain}
+        │         │         │         │                 │                 └─4*[{pool}]
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gnome-terminal-─┬─bash───pstree
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gpg-agent
+        │         │         │         ├─gvfs-afc-volume─┬─{gdbus}
+        │         │         │         │                 ├─{gmain}
+        │         │         │         │                 └─{gvfs-afc-volume}
+        │         │         │         ├─gvfs-goa-volume─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gvfs-gphoto2-vo─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gvfs-mtp-volume─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gvfs-udisks2-vo─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─gvfsd─┬─{gdbus}
+        │         │         │         │       └─{gmain}
+        │         │         │         ├─gvfsd-dnssd─┬─{gdbus}
+        │         │         │         │             └─{gmain}
+        │         │         │         ├─gvfsd-fuse─┬─{gdbus}
+        │         │         │         │            ├─{gmain}
+        │         │         │         │            ├─{gvfs-fuse-sub}
+        │         │         │         │            └─2*[{gvfsd-fuse}]
+        │         │         │         ├─gvfsd-metadata─┬─{gdbus}
+        │         │         │         │                └─{gmain}
+        │         │         │         ├─gvfsd-network─┬─{dconf worker}
+        │         │         │         │               ├─{gdbus}
+        │         │         │         │               └─{gmain}
+        │         │         │         ├─gvfsd-trash─┬─{gdbus}
+        │         │         │         │             └─{gmain}
+        │         │         │         ├─hud-service─┬─{dconf worker}
+        │         │         │         │             ├─{gdbus}
+        │         │         │         │             └─{gmain}
+        │         │         │         ├─ibus-daemon─┬─ibus-dconf─┬─{dconf worker}
+        │         │         │         │             │            ├─{gdbus}
+        │         │         │         │             │            └─{gmain}
+        │         │         │         │             ├─ibus-engine-sim─┬─{gdbus}
+        │         │         │         │             │                 └─{gmain}
+        │         │         │         │             ├─ibus-ui-gtk3─┬─{dconf worker}
+        │         │         │         │             │              ├─{gdbus}
+        │         │         │         │             │              └─{gmain}
+        │         │         │         │             ├─{gdbus}
+        │         │         │         │             └─{gmain}
+        │         │         │         ├─ibus-x11─┬─{dconf worker}
+        │         │         │         │          ├─{gdbus}
+        │         │         │         │          └─{gmain}
+        │         │         │         ├─indicator-appli─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-bluet─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-datet─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 ├─{gmain}
+        │         │         │         │                 ├─{indicator-datet}
+        │         │         │         │                 └─{pool}
+        │         │         │         ├─indicator-keybo─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-messa─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-power─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-print─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-sessi─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─indicator-sound─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─notify-osd─┬─{dconf worker}
+        │         │         │         │            ├─{gdbus}
+        │         │         │         │            └─{gmain}
+        │         │         │         ├─pulseaudio─┬─{alsa-sink-ALC32}
+        │         │         │         │            └─{alsa-source-ALC}
+        │         │         │         ├─sh───zeitgeist-daemo─┬─{gdbus}
+        │         │         │         │                      └─{gmain}
+        │         │         │         ├─unity-files-dae─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 ├─{gmain}
+        │         │         │         │                 └─4*[{pool}]
+        │         │         │         ├─unity-panel-ser─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─unity-scope-hom─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─unity-scope-loa─┬─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─unity-settings-─┬─syndaemon
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 ├─{gmain}
+        │         │         │         │                 └─2*[{threaded-ml}]
+        │         │         │         ├─2*[upstart-dbus-br]
+        │         │         │         ├─upstart-file-br
+        │         │         │         ├─upstart-udev-br
+        │         │         │         ├─window-stack-br
+        │         │         │         └─zeitgeist-fts─┬─{gdbus}
+        │         │         │                         └─{gmain}
+        │         │         ├─{gdbus}
+        │         │         └─{gmain}
+        │         ├─{gdbus}
+        │         └─{gmain}
+        ├─mysqld───27*[{mysqld}]
+        ├─polkitd─┬─{gdbus}
+        │         └─{gmain}
+        ├─rsyslogd─┬─{in:imklog}
+        │          ├─{in:imuxsock}
+        │          └─{rs:main Q:Reg}
+        ├─rtkit-daemon───2*[{rtkit-daemon}]
+        ├─snapd───8*[{snapd}]
+        ├─systemd───(sd-pam)
+        ├─systemd-journal
+        ├─systemd-logind
+        ├─systemd-timesyn───{sd-resolve}
+        ├─systemd-udevd
+        ├─thermald───{thermald}
+        ├─udisksd─┬─{cleanup}
+        │         ├─{gdbus}
+        │         ├─{gmain}
+        │         └─{probing-thread}
+        ├─upowerd─┬─{gdbus}
+        │         └─{gmain}
+        ├─vsftpd
+        ├─whoopsie─┬─{gdbus}
+        │          └─{gmain}
+        └─wpa_supplicant
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ top
+
+top - 14:36:07 up 1 day,  9:53,  1 user,  load average: 0.55, 0.83, 1.60
+Tasks: 218 total,   2 running, 216 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.7 us,  1.4 sy,  0.0 ni, 93.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  3949648 total,   660820 free,  1259064 used,  2029764 buff/cache
+KiB Swap:  4103164 total,  4072732 free,    30432 used.  2072536 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                      
+ 1109 root      20   0  443728  63716  32640 S  11.9  1.6  40:50.18 Xorg                                                                         
+21470 sayan     20   0  662676  36728  28704 S   5.6  0.9   0:06.94 gnome-terminal-                                                              
+ 1913 sayan     20   0 1724432 158596  54128 S   4.6  4.0  71:23.12 compiz                                                                       
+ 1807 sayan     20   0  206864   6492   5864 S   1.3  0.2   0:11.45 at-spi2-registr                                                              
+21635 sayan     20   0   41808   3704   3108 R   1.0  0.1   0:00.17 top                                                                          
+  189 root     -51   0       0      0      0 S   0.7  0.0   1:11.07 irq/135-DLL06AC                                                              
+  197 root     -51   0       0      0      0 S   0.3  0.0   0:37.62 irq/173-i2c_hid                                                              
+ 1140 mysql     20   0 1238660 133988  15480 S   0.3  3.4   1:22.10 mysqld                                                                       
+ 1822 sayan     20   0  524512  27560  21116 S   0.3  0.7   0:12.79 bamfdaemon                                                                   
+ 4536 sayan     20   0 3155664 413152 130236 S   0.3 10.5  50:11.12 chromium-browse                                                              
+ 7628 sayan     20   0  583848  23476  14536 S   0.3  0.6   0:03.08 unity-scope-loa                                                              
+21172 root      20   0       0      0      0 S   0.3  0.0   0:00.79 kworker/0:2                                                                  
+21266 root      20   0       0      0      0 S   0.3  0.0   0:00.46 kworker/u8:35                                                                
+    1 root      20   0  185520   5640   4072 S   0.0  0.1   0:05.22 systemd                                                                      
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.09 kthreadd                                                                     
+    4 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:0H                                                                 
+    6 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 mm_percpu_wq                                                                 
+    7 root      20   0       0      0      0 S   0.0  0.0   0:01.14 ksoftirqd/0                                                                  
+    8 root      20   0       0      0      0 R   0.0  0.0   0:28.43 rcu_sched                                                                    
+    9 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh                                                                       
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.04 migration/0                                                                  
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.29 watchdog/0                                                                   
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/0                                                                      
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.01 cpuhp/1                                                                      
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.30 watchdog/1                                                                   
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.03 migration/1                                                                  
+   16 root      20   0       0      0      0 S   0.0  0.0   0:05.57 ksoftirqd/1                                                                  
+   18 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:0H                                                                 
+   19 root      20   0       0      0      0 S   0.0  0.0   0:00.01 cpuhp/2                                                                      
+   20 root      rt   0       0      0      0 S   0.0  0.0   0:00.36 watchdog/2                                                                   
+   21 root      rt   0       0      0      0 S   0.0  0.0   0:00.04 migration/2                                                                  
+   22 root      20   0       0      0      0 S   0.0  0.0   0:01.54 ksoftirqd/2                                                                  
+   24 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0H                                                                 
+   25 root      20   0       0      0      0 S   0.0  0.0   0:00.02 cpuhp/3                                                                      
+   26 root      rt   0       0      0      0 S   0.0  0.0   0:00.35 watchdog/3                                                                   
+   27 root      rt   0       0      0      0 S   0.0  0.0   0:00.05 migration/3     
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ kill 21477 
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ killall -l
+HUP INT QUIT ILL TRAP ABRT IOT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM
+STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH IO PWR SYS
+UNUSED
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ service --status-all
+ [ + ]  acpid
+ [ - ]  alsa-utils
+ [ - ]  anacron
+ [ + ]  apparmor
+ [ + ]  apport
+ [ + ]  avahi-daemon
+ [ + ]  binfmt-support
+ [ + ]  bluetooth
+ [ - ]  bootmisc.sh
+ [ - ]  brltty
+ [ - ]  checkfs.sh
+ [ - ]  checkroot-bootclean.sh
+ [ - ]  checkroot.sh
+ [ + ]  console-setup
+ [ + ]  cron
+ [ + ]  cups
+ [ + ]  cups-browsed
+ [ + ]  dbus
+ [ - ]  dns-clean
+ [ + ]  grub-common
+ [ - ]  hostname.sh
+ [ - ]  hwclock.sh
+ [ + ]  irqbalance
+ [ - ]  kerneloops
+ [ + ]  keyboard-setup
+ [ - ]  killprocs
+ [ + ]  kmod
+ [ + ]  lightdm
+ [ - ]  mountall-bootclean.sh
+ [ - ]  mountall.sh
+ [ - ]  mountdevsubfs.sh
+ [ - ]  mountkernfs.sh
+ [ - ]  mountnfs-bootclean.sh
+ [ - ]  mountnfs.sh
+ [ + ]  mysql
+ [ + ]  network-manager
+ [ + ]  networking
+ [ + ]  ondemand
+ [ - ]  plymouth
+ [ - ]  plymouth-log
+ [ - ]  pppd-dns
+ [ + ]  procps
+ [ + ]  rc.local
+ [ + ]  resolvconf
+ [ - ]  rsync
+ [ + ]  rsyslog
+ [ - ]  saned
+ [ - ]  screen-cleanup
+ [ - ]  sendsigs
+ [ + ]  speech-dispatcher
+ [ + ]  thermald
+ [ + ]  udev
+ [ + ]  ufw
+ [ - ]  umountfs
+ [ - ]  umountnfs.sh
+ [ - ]  umountroot
+ [ + ]  unattended-upgrades
+ [ + ]  urandom
+ [ - ]  uuidd
+ [ + ]  virtualbox
+ [ + ]  vsftpd
+ [ + ]  whoopsie
+ [ - ]  x11-common
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ head hello.c 
+#include<stdio.h>
+int main(){
+	printf("line 1\n");
+	printf("line 2\n");
+	printf("line 3\n");
+	printf("line 4\n");
+	printf("line 5\n");
+	printf("line 6\n");
+	printf("line 7\n");
+	printf("line 8\n");
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ tail hello.c 
+	printf("line 3\n");
+	printf("line 4\n");
+	printf("line 5\n");
+	printf("line 6\n");
+	printf("line 7\n");
+	printf("line 8\n");
+	printf("line 9\n");
+	printf("line 10\n");
+	return 0;
+}
+
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ less hello.c
+
+#include<stdio.h>
+int main(){
+        printf("line 1\n");
+        printf("line 2\n");
+        printf("line 3\n");
+        printf("line 4\n");
+        printf("line 5\n");
+        printf("line 6\n");
+        printf("line 7\n");
+        printf("line 8\n");
+        printf("line 9\n");
+        printf("line 10\n");
+        return 0;
+}
+hello.c (END)
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ more hello.c 
+#include<stdio.h>
+int main(){
+	printf("line 1\n");
+	printf("line 2\n");
+	printf("line 3\n");
+	printf("line 4\n");
+	printf("line 5\n");
+	printf("line 6\n");
+	printf("line 7\n");
+	printf("line 8\n");
+	printf("line 9\n");
+	printf("line 10\n");
+	return 0;
+}
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ cat hello.c 
+#include<stdio.h>
+int main(){
+	printf("line 1\n");
+	printf("line 2\n");
+	printf("line 3\n");
+	printf("line 4\n");
+	printf("line 5\n");
+	printf("line 6\n");
+	printf("line 7\n");
+	printf("line 8\n");
+	printf("line 9\n");
+	printf("line 10\n");
+	return 0;
+}
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ grep return hello.c 
+	return 0;
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ grep line hello.c 
+	printf("line 1\n");
+	printf("line 2\n");
+	printf("line 3\n");
+	printf("line 4\n");
+	printf("line 5\n");
+	printf("line 6\n");
+	printf("line 7\n");
+	printf("line 8\n");
+	printf("line 9\n");
+	printf("line 10\n");
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ man arp
+DESCRIPTION
+Arp manipulates or displays the kernel's IPv4 network neighbour cache. It can add entries to the table, delete one or display the cur‐
+       rent content.
+
+       ARP stands for Address Resolution Protocol, which is used to find the media access control address of a network neighbour for a  given
+       IPv4 Address.
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ man dig
+DESCRIPTION
+       dig (domain information groper) is a flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the
+       answers that are returned from the name server(s) that were queried. Most DNS administrators use dig to troubleshoot DNS problems
+       because of its flexibility, ease of use and clarity of output. Other lookup tools tend to have less functionality than dig.
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ man nslookup
+DESCRIPTION
+       Nslookup is a program to query Internet domain name servers.  Nslookup has two modes: interactive and non-interactive. Interactive
+       mode allows the user to query name servers for information about various hosts and domains or to print a list of hosts in a domain.
+       Non-interactive mode is used to print just the name and requested information for a host or domain.
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ man netstat
+DESCRIPTION
+       Netstat prints information about the Linux networking subsystem.  The type of information printed is controlled by the first argument,
+       as follows:
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ man tcpdump
+DESCRIPTION
+       Tcpdump  prints out a description of the contents of packets on a network interface that match the boolean expression; the description
+       is preceded by a time stamp, printed, by default, as hours, minutes, seconds, and fractions of a second since midnight.  It  can  also
+       be  run  with the -w flag, which causes it to save the packet data to a file for later analysis, and/or with the -r flag, which causes
+       it to read from a saved packet file rather than to read packets from a network interface (please note  tcpdump  is  protected  via  an
+       enforcing apparmor(7) profile in Ubuntu which limits the files tcpdump may access).  It can also be run with the -V flag, which causes
+       it to read a list of saved packet files. In all cases, only packets that match expression will be processed by tcpdump.
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ man tcpdump
+ping, ping6 - send ICMP ECHO_REQUEST to network hosts
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ ping www.google.com
+PING www.google.com (172.217.24.228) 56(84) bytes of data.
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=2 ttl=52 time=66.6 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=3 ttl=52 time=67.1 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=4 ttl=52 time=68.2 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=5 ttl=52 time=68.1 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=6 ttl=52 time=66.5 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=8 ttl=52 time=67.1 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=9 ttl=52 time=67.0 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=10 ttl=52 time=66.8 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=11 ttl=52 time=65.5 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=12 ttl=52 time=66.2 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=13 ttl=52 time=65.7 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=14 ttl=52 time=66.5 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=15 ttl=52 time=66.0 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=16 ttl=52 time=65.2 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=17 ttl=52 time=67.8 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=18 ttl=52 time=65.8 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=19 ttl=52 time=65.8 ms
+64 bytes from kul06s17-in-f228.1e100.net (172.217.24.228): icmp_seq=20 ttl=52 time=65.8 ms
+^C
+--- www.google.com ping statistics ---
+20 packets transmitted, 18 received, 10% packet loss, time 19023ms
+rtt min/avg/max/mdev = 65.207/66.586/68.260/0.889 ms
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ hostname
+sayan-Inspiron-15-3552
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ traceroute -V
+Modern traceroute for Linux, version 2.0.21
+Copyright (c) 2008  Dmitry Butskoy,   License: GPL v2 or any later
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ traceroute www.google.com
+traceroute to www.google.com (172.217.24.228), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  Kol-150.129.111.113.PMPL-Broadband.net (150.129.111.113)  6.622 ms  6.522 ms  6.411 ms
+ 4  10.200.30.2 (10.200.30.2)  6.101 ms  7.354 ms  7.192 ms
+ 5  * * *
+ 6  * * *
+ 7  10.200.110.5 (10.200.110.5)  7.026 ms  7.041 ms  8.253 ms
+ 8  14.140.193.149.STATIC-Kolkata-vsnl.net.in (14.140.193.149)  9.952 ms  9.387 ms  9.368 ms
+ 9  172.23.183.121 (172.23.183.121)  38.496 ms  43.034 ms  39.448 ms
+10  172.23.78.238 (172.23.78.238)  44.692 ms *  40.034 ms
+11  115.113.165.98.static-mumbai.vsnl.net.in (115.113.165.98)  39.576 ms  38.075 ms  38.340 ms
+12  108.170.248.195 (108.170.248.195)  67.611 ms 108.170.248.163 (108.170.248.163)  66.767 ms 108.170.248.194 (108.170.248.194)  66.186 ms
+13  209.85.243.15 (209.85.243.15)  69.957 ms  68.962 ms 64.233.174.3 (64.233.174.3)  67.378 ms
+14  209.85.249.128 (209.85.249.128)  92.478 ms 209.85.243.15 (209.85.243.15)  70.530 ms 216.239.41.152 (216.239.41.152)  94.698 ms
+15  108.170.251.97 (108.170.251.97)  61.529 ms 66.249.95.225 (66.249.95.225)  66.960 ms 72.14.235.109 (72.14.235.109)  69.175 ms
+16  del03s05-in-f4.1e100.net (172.217.24.228)  68.921 ms 66.249.95.225 (66.249.95.225)  69.235 ms  95.320 ms
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ tracepath www.google.com
+ 1?: [LOCALHOST]                                         pmtu 1500
+ 1:  no reply
+ 2:  no reply
+ 3:  Kol-150.129.111.113.PMPL-Broadband.net                5.366ms 
+ 4:  10.200.30.2                                           4.785ms 
+ 5:  no reply
+ 6:  no reply
+ 7:  10.200.110.5                                          4.215ms 
+ 8:  14.140.193.149.STATIC-Kolkata-vsnl.net.in             5.035ms 
+ 9:  172.23.183.121                                       38.400ms asymm 11 
+10:  172.23.78.238                                        39.150ms asymm 11 
+11:  no reply
+12:  no reply
+13:  no reply
+14:  no reply
+15:  no reply
+16:  no reply
+17:  no reply
+18:  no reply
+19:  no reply
+20:  no reply
+21:  no reply
+22:  no reply
+23:  no reply
+24:  no reply
+25:  no reply
+26:  no reply
+27:  no reply
+28:  no reply
+29:  no reply
+30:  no reply
+     Too many hops: pmtu 1500
+     Resume: pmtu 1500 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ ifconfig
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:7319 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7319 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:989064 (989.0 KB)  TX bytes:989064 (989.0 KB)
+
+wlp1s0    Link encap:Ethernet  HWaddr b0:52:16:2d:f2:49  
+          inet addr:172.16.2.133  Bcast:172.16.3.255  Mask:255.255.254.0
+          inet6 addr: fe80::c4a0:3f9b:c833:bbbf/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2423981 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1183866 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:3491005318 (3.4 GB)  TX bytes:128378629 (128.3 MB)
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ sudo ifup lo
+[sudo] password for sayan: 
+ifup: interface lo already configured
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ sudo ifup lo
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ ifconfig
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:7339 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7339 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:990789 (990.7 KB)  TX bytes:990789 (990.7 KB)
+
+wlp1s0    Link encap:Ethernet  HWaddr b0:52:16:2d:f2:49  
+          inet addr:172.16.2.133  Bcast:172.16.3.255  Mask:255.255.254.0
+          inet6 addr: fe80::c4a0:3f9b:c833:bbbf/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2424744 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1183963 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:3491124942 (3.4 GB)  TX bytes:128394065 (128.3 MB)
+
+
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         172.16.3.1      0.0.0.0         UG    600    0        0 wlp1s0
+172.16.2.0      *               255.255.254.0   U     600    0        0 wlp1s0
+
+
+
+
+
+
+Q1: 
+
+sayan@sayan-Inspiron-15-3552:~/IIITK/Networking/Ass$ ifconfig | grep addr
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+wlp1s0    Link encap:Ethernet  HWaddr b0:52:16:2d:f2:49  
+          inet addr:172.16.2.133  Bcast:172.16.3.255  Mask:255.255.254.0
+          inet6 addr: fe80::c4a0:3f9b:c833:bbbf/64 Scope:Link
+
+
