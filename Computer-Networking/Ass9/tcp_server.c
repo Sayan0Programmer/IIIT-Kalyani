@@ -1,3 +1,6 @@
+/*
+ * message passing Server side
+ */
 #include<arpa/inet.h>
 #include<netinet/in.h>
 #include<stdbool.h>
