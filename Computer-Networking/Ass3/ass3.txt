@@ -1,0 +1,30 @@
+Q1: Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
+Ans:-No
+
+Q2: Inspect the contents of the server response. Did the server explicitly return the contents of the file? How can you tell?
+Ans:- The server explicitly returned the contents of the file. Wireshark includes “Line-Based Text Data” which shows that the server sent back to my browser which is specifically what the website showed when I brought it up on my browser.
+
+Q3: Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?
+Ans:-Yes. If-Modified-Since: wed, 11 Apr 2018 17:29:08 GMT\r\n.
+
+Q4: What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.
+Ans:- We get a HTTP/1.1 304 Not Modified Response. This is much shorter than the full response packet seen previously
+which contained all of Alice in Wonderland.
+
+Q5: How many HTTP GET request messages did your browser send? Which packet number in the trace contains the GET message for the Bill or Rights?
+Ans:- Browser sent 1 HTTP GET request to the server. The Packet that contained the GET message was packet number 250.
+
+Q6: Which packet number in the trace contains the status code and phrase associated with the response to the HTTP GET request?
+Ans:-The packet that contains the status code and phrase which the server sent in response to the GET message was packet number 258.
+
+Q7: What is the status code and phrase in the response?
+Ans:-The code and phrase in the response was 200 OK.
+
+Q8: How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?
+Ans:-The data was sent in 6 TCP segments to the browser, then reassembled.
+
+Q9: How many HTTP GET request messages did your browser send? To which Internet addresses were these GET requests sent?
+Ans:-Browser sends 3 HTTP GET message requests, They are: The initial page, the Pearson logo, and the cover of Pearson book, 5th Edition. Initial Page address: 128.119.245.12, Pearson Logo: 165.193.140.14, Pearson book, 5th Edition: 128.119.240.90.
+
+Q10: Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.
+Ans:- The browser downloaded the two images in serially. This might be the case because the first image was requested and sent before the second image was requested by the browser. They had been running in parallel, both files would have been requested then would have returned in the same time period. In this case however, the second image was only requested after the first image came back.
