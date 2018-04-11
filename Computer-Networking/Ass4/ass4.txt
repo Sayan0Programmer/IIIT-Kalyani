@@ -1,0 +1,14 @@
+Q1: Which transport layer protocol is used to connect the remote machine?
+Ans: TCP
+
+Q2: Fire the command “ifconfig” on the client machine. It returns the ip address of which machine and why?
+Ans: On firing “ifconfig” command on the client machine it returns the ip address of remote machine because it has become the Server for the Client machine in stead of the original server.
+
+Q3: How the “telnet” protocol makes a connection with the remote machine using the transport layer protocol. Describe it.
+Ans: Telnet protocol makes a connection with the remote machine using the TCP/IP protocol using well define port 23 for establishing the connection we need ip address of the remote machine once we installed the telnet remote access application to our system we simply run the following command to make the connection.
+sayan@sayan-Inspiron-15-3552:~$ telnet 127.16.4.64[ENTER]
+Trying 127.16.4.64...
+
+Q4: How the “telnet” protocol closes a connection with the remote machine using the transport layer protocol. Describe it.
+Ans: To close the connection we have to execute the quit or logout command through terminal.
+sayan@sayan-Inspiron-15-3552:~$ logout[ENTER]
