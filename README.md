@@ -1,2 +1,2 @@
 # IIIT-Kalyani
-This repository contains collage Assignments &amp; Programs
+This repository contains college Assignments &amp; Programs
