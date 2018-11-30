@@ -1,0 +1,165 @@
+K-Means Clustering
+******************
+
+data set = { 2 4 -10 12 3 20 30 11}
+
+k=3
+centroid = { 2 4 30 }
+
+
+iteration 1
+
+Distance:
+
+	cluster 0 { 0  2  12  10 1  18 28 9}
+
+	cluster 1 { 2  0  14  8  1  16 26 7}
+
+	cluster 2 { 28 26 40  18 27 10 0  19}
+
+min Distance Index	0  1   0  1  0  2  2  1
+
+
+cluster 0: { 2 -10  3}
+2-10+3/3= (int) -5/3=-1
+	 cluster 1: { 4 12 11}      27/3= 9 
+	 cluster 2: { 20 30}        
+
+
+ith iteration and centroid of ith iteration and i-1th iteration are same then its the point to stop. 
+	
+	final Clusters which we got are:
+
+------------------------------------------
+
+cluster 0: { 2 4 -10 3 }
+cluster 1: { 12 11 }
+cluster 2: {20 30}
+------------------------------------------
+
+
+
+************
+Code
+************
+
+
+package kMeans;
+
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+
+	static int dist(int x, int y) {
+		int d;
+		if (x>y)
+			d = x-y;
+		else
+			d = y-x;
+		return Math.abs(d);
+	}
+	static boolean areEql(int A[], int B[], int n) {
+		int i;
+		boolean d = true;
+		for (i = 0; i < n; i++) {
+			if(A[i] != B[i]) {
+				d = false;
+				break;
+			}
+		}
+		return d;
+	}
+	static void cpArr(int S[], int D[], int n) {		// (src, dst, size)
+		int i;
+		for (i = 0; i < n; i++) {
+			D[i] = S[i];
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello, World!");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter number of elements of data: ");
+		int nA = sc.nextInt();
+		int A[] = new int[nA];
+		System.out.printf("Enter %d elements of Data", nA);
+		int i;
+		for (i = 0; i < nA; i++) {
+			A[i] = sc.nextInt();
+		}
+		for (i = 0; i < nA; i++) {
+			System.out.printf("%d ", A[i]);
+		}
+		System.out.print("Enter number of elements for centroid: ");
+		int nC = sc.nextInt();
+		int C[] = new int[nC];
+		int c[] = new int[nC];
+		System.out.printf("Enter %d elements of centroid", nC);
+		for (i = 0; i < nC; i++) {
+			C[i] = sc.nextInt();
+			c[i] = 0;
+		}
+		for (i = 0; i < nC; i++) {
+			System.out.printf("%d ", C[i]);
+		}
+		int D[] = new int[nA];
+		
+		int j, min;
+		int count = 0, sum, x;
+		
+		while(!areEql(C, c, nC) && count < 10) {
+			cpArr(C, c, nC);
+			for (i = 0; i < nA; i++) {
+				min = 0;
+				for (j = 1; j < nC; j++) {
+					if (dist(A[i], C[j]) < dist(A[i], C[min]))
+						min = j;
+					//System.out.print(dist(A[i], C[j]));
+				}
+				//System.out.println(" ");
+				D[i] = min;
+			}
+			for (i = 0; i < nA; i++) {
+				System.out.printf("%d ", D[i]);
+			}
+			sum = 0;
+			for (j = 0; j < nC; j++) {
+				sum = 0; x=0;
+				for (i = 0; i < nA; i++) {
+					if(D[i] == j) {
+						sum += A[i];
+						++x;
+					}
+				}
+				C[j] = sum/x;
+			}
+		}
+		
+		System.out.println("Final Clusters are: ");
+		for (j = 0; j < nC; j++) {
+			System.out.print("Cluster" + j + ":");
+			for(i = 0; i < nA; i++) {
+				if(D[i] == j)
+					System.out.print(" " + A[i]);
+			}
+			System.out.println("");
+		}
+	}
+}
+
+
+
+Enter number of elements of data: 8
+Enter 8 elements of Data2 4 -10 12 3 20 30 11
+2 4 -10 12 3 20 30 11 Enter number of elements for centroid: 3
+Enter 3 elements of centroid2 4 30
+2 4 30 0 1 0 1 0 2 2 1 0 0 0 1 0 2 2 1 0 0 0 1 0 2 2 1 Final Clusters are: 
+Cluster0: 2 4 -10 3
+Cluster1: 12 11
+Cluster2: 20 30
+	
+	         
+	       
