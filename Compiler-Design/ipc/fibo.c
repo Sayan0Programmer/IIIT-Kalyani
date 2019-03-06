@@ -9,6 +9,7 @@
 
 int main(int argc, char *argv[]){
 	int a = 0, b = 1, t, n = atoi(argv[1]);
+	printf("fibo(%d) = ", n);
 	while(--n) {
 		t = b;
 		b += a;

@@ -10,6 +10,7 @@
 int main(int argc, char *argv[]){
 	int n = atoi(argv[1]);
 	int f = n;
+	printf("fact(%d) = ", n);
 	while(--n) {
 		f *= n;
 	}
